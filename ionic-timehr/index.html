@@ -1,0 +1,163 @@
+<html ng-app="kuwuya">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1">
+    <meta name="Keywords" contect="高端招聘,腾驹达,景素奇,人才合作"/>
+    <meta name="description" content="腾驹达猎头公司由知名人力资源专家景素奇先生于2003年创办高端人才，自成立之始，一改传统的猎头销售服务模式，走出了一条与众不同的成长发展之路。">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <!-- Web App Capable -->
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <!-- Change Status Bar -->
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+
+    <link rel=apple-touch-icon href=lib/img/icon/ios/icon-57.png>
+    <link rel=apple-touch-icon sizes=72x72 href=lib/img/icon/ios/icon-72.png>
+    <link rel=apple-touch-icon sizes=114x114 href=lib/img/icon/ios/icon-114.png>
+    <title>腾驹达猎聘网</title>
+
+    <script src="./lib/js/ionic.bundle.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./lib/css/ionic.min.css">
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+  <body ng-controller="MainCtrl">
+
+    <ion-nav-view></ion-nav-view>
+
+    <script id="templates/event-menu.html" type="text/ng-template">
+      <ion-side-menus enable-menu-with-back-views="false">
+        <ion-side-menu-content>
+          <ion-header-bar class="bar-positive">
+            <h1 class="title">腾驹达官网</h1>
+          </ion-header-bar>
+          <ion-nav-view name="menuContent"></ion-nav-view>
+        </ion-side-menu-content>
+    </script>
+
+    <script id="templates/job-menu.html" type="text/ng-template">
+      <ion-side-menus enable-menu-with-back-views="false">
+        <ion-side-menu-content>
+          <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button>返回</ion-nav-back-button> <!--顶部导航 左部 back按钮-->
+            <ion-nav-buttons side="right">
+              <!--顶部导航 右部 菜单按钮-->
+              <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+            </ion-nav-buttons>
+          </ion-nav-bar>
+          <ion-nav-view name="menuJob"></ion-nav-view>
+        </ion-side-menu-content> 
+
+        <ion-side-menu side="right">
+          <ion-header-bar class="bar-positive">
+            <h1 class="title"><i class="icon ion-social-html5"></i> 快速导航</h1>
+            <a href="#/event/home" class="button icon ion-home pull-right" menu-close></a>
+          </ion-header-bar>
+          <ion-content>
+            <ul class="list">
+              <li class="item"><i class="icon ion-android-radio-button-on"></i> 高端招聘</li>
+              <li class="item"><i class="icon ion-android-radio-button-on"></i> 猎头介绍</li>
+              <li class="item"><i class="icon ion-android-radio-button-on"></i> 沙龙活动</li>
+              <li class="item"><i class="icon ion-android-radio-button-on"></i> 关于腾驹达</li>
+            </ul>
+          </ion-content>
+          </ion-side-menu>
+        </ion-side-menus>
+    </script>
+
+    <script id="templates/home.html" type="text/ng-template">
+      <ion-view view-title="腾驹达猎聘网">
+        <ion-content>
+          <div class="row">
+            <div class="col">
+                <ion-slide-box does-continue="true">
+                  <ion-slide>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                      <ion-spinner icon="spiral"></ion-spinner>
+                    </div>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                    </div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div>
+                      <h3>Favorite or skip short song samples Songhop suggests</h3>
+                    </div>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                    </div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div>
+                      <h3>Play your new music and share it with your friends</h3>
+                    </div>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                    </div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div>
+                      <h3>Play your new music and share it with your friends</h3>
+                    </div>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                    </div>
+                  </ion-slide>
+                  <ion-slide>
+                    <div>
+                      <h3>Play your new music and share it with your friends</h3>
+                    </div>
+                    <div>
+                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
+                    </div>
+                  </ion-slide>
+                </ion-slide-box>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-50">
+              <a href="#/jobs/job" nav-direction="forward">
+                <button class="button button-large button-full button-royal">
+                  高端招聘
+                </button>
+              </a>
+            </div>
+            <div class="col col-50">
+              <a href="#/event/lietou">
+                <button class="button button-large button-full button-assertive">
+                  猎头介绍
+                </button>
+              </a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col col-50">
+              <a href="#/event/about">
+                <button class="button button-large button-full button-balanced idpro-button-full">
+                  沙龙活动
+                </button>
+              </a>
+            </div>
+            <div class="col col-50">
+              <a href="#/event/moeny">
+                <button class="button button-large button-full button-positive idpro-button-full">
+                  关于腾驹达
+                </button>
+              </a>
+            </div>
+          </div>
+        </ion-content>
+      </ion-view>
+    </script>
+
+<!-- your app's js -->
+<script src="./js/app.js"></script>
+
+<!-- controllers 
+<script src="./lib/js/controllers/SplashCtrl.js"></script>
+<script src="./lib/js/controllers/AuthCtrl.js"></script>
+-->
+  </body>
+</html>
