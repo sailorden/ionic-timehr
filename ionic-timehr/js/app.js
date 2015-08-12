@@ -19,6 +19,7 @@ angular.module('kuwuya', ['ionic'])
 .config(function($stateProvider, $urlRouterProvider) {
 
   $stateProvider
+  /*
     .state('eventmenu', {
       url: "/event",
       abstract: true,
@@ -32,16 +33,25 @@ angular.module('kuwuya', ['ionic'])
         }
       }
     })
+*/
     .state('jobmenu', {
       url: "/jobs",
       abstract: true,
       templateUrl: "templates/job-menu.html"
     })
+    .state('jobmenu.home', {
+      url: "/home",
+      views: {
+        'menuJob' :{
+          templateUrl: "templates/home.html"
+        }
+      }
+    })
     .state('jobmenu.job', {
       url: "/job",
       views: {
         'menuJob' :{
-          templateUrl: "./job.html"
+          templateUrl: "./templates/job.html"
         }
       }
     })
@@ -49,37 +59,22 @@ angular.module('kuwuya', ['ionic'])
       url:"/joblist",
       views: {
         'menuJob' :{
-          templateUrl: "./joblist.html"
+          templateUrl: "./templates/joblist.html"
         }
       }
     })
-    .state('eventmenu.lietou', {
+    .state('jobmenu.lietou', {
       url: "/lietou",
       views: {
-        'menuContent' :{
-          templateUrl: "./lietou.html"
+        'menuJob' :{
+          templateUrl: "./templates/lietou.html"
           //controller: "CheckinCtrl"
         }
       }
     })
-    .state('eventmenu.css_utility',{   //css 文件夹
-      url:"/css/utility",
-      views:{
-        'menuContent' :{
-          templateUrl: "./css/utility.html"
-        }
-      }
-    })
-    .state('eventmenu.js_ion-header-bar',{   //js 文件夹
-      url:"/js/ion-header-bar",
-      views:{
-        'menuContent' :{
-          templateUrl: "./js/ion-header-bar.html"
-        }
-      }
-    })
+    
   
- $urlRouterProvider.otherwise("/event/home");
+ $urlRouterProvider.otherwise("/jobs/home");
 })
 
 .controller('MainCtrl', function($scope, $ionicHistory, $ionicScrollDelegate, $rootScope) {

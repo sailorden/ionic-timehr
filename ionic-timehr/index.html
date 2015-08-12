@@ -25,7 +25,7 @@
   <body ng-controller="MainCtrl"  ng-class="{'bar-subheader-slide-away': slideHeader}">
 
     <ion-nav-view></ion-nav-view>
-
+    <!--
     <script id="templates/event-menu.html" type="text/ng-template">
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
@@ -35,7 +35,7 @@
           <ion-nav-view name="menuContent"></ion-nav-view>
         </ion-side-menu-content>
     </script>
-
+    -->
     <script id="templates/job-menu.html" type="text/ng-template">
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
@@ -57,9 +57,7 @@
           <ion-content>
             <ul class="list">
               <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 高端招聘</a>
-              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</li>
-              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 沙龙活动</li>
-              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 关于腾驹达</li>
+              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</a>
             </ul>
           </ion-content>
           </ion-side-menu>
@@ -125,7 +123,7 @@
               </a>
             </div>
             <div class="col col-50">
-              <a href="#/event/lietou">
+              <a href="#/jobs/lietou">
                 <button class="button button-large button-full button-assertive">
                   猎头介绍
                 </button>
