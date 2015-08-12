@@ -82,10 +82,36 @@ angular.module('kuwuya', ['ionic'])
  $urlRouterProvider.otherwise("/event/home");
 })
 
-.controller('MainCtrl',function ($scope,$ionicHistory) {
-    $scope.warn_right = function () {
-        history.back();
-        //$ionicHistory.goBack();
+.controller('MainCtrl', function($scope, $ionicHistory, $ionicScrollDelegate, $rootScope) {
+  $scope.warn_right = function () {
+        //history.back();
+        $ionicHistory.goBack();
     };
-    $scope.nav_header = '腾驹达官网';
-  });
+  $scope.nav_header = '腾驹达官网';
+
+  $rootScope.slideHeader = false;
+  $rootScope.slideHeaderPrevious = 0;
+})
+
+.directive('scrollWatch', function($rootScope) {
+  return function(scope, elem, attr) {
+    var start = 0;
+    var threshold = 150;
+    
+    elem.bind('scroll', function(e) {
+      if(e.detail.scrollTop - start > threshold) {
+        $rootScope.slideHeader = true;
+      } else {
+        $rootScope.slideHeader = false;
+      }
+      
+      if ($rootScope.slideHeaderPrevious >= e.detail.scrollTop - start) {
+        $rootScope.slideHeader = false;
+      }
+      
+      $rootScope.slideHeaderPrevious = e.detail.scrollTop - start;
+      $rootScope.$apply();
+    });
+  };
+});
+

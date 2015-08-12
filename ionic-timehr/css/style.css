@@ -1,5 +1,24 @@
-.bar-top{top:0;}
 a{text-decoration: none;}
 /*ionic 主页 home.html*/
 .slider-slides{height: 230px;}
 .button.button-block, .button.button-full{margin: 0px;}
+
+/*job html  高端招聘 职位搜索*/
+.job_meony{float: right;color:#ff7f00;}
+
+
+
+/*顶部自动隐藏*/
+.bars-subheader {
+  z-index: 1;
+  transition: top 0.5s ease;
+}
+
+.bars-header {
+  top: 0px;
+  padding-top:44px;
+}
+
+body.bar-subheader-slide-away .bars-subheader {
+  top: -44px;
+}

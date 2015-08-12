@@ -22,7 +22,7 @@
     <link rel="stylesheet" type="text/css" href="./lib/css/ionic.min.css">
     <link href="./css/style.css" rel="stylesheet">
   </head>
-  <body ng-controller="MainCtrl">
+  <body ng-controller="MainCtrl"  ng-class="{'bar-subheader-slide-away': slideHeader}">
 
     <ion-nav-view></ion-nav-view>
 
@@ -30,7 +30,7 @@
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
           <ion-header-bar class="bar-positive">
-            <h1 class="title">腾驹达官网</h1>
+            <h1 class="title">{{nav_header}}</h1>
           </ion-header-bar>
           <ion-nav-view name="menuContent"></ion-nav-view>
         </ion-side-menu-content>
@@ -39,7 +39,7 @@
     <script id="templates/job-menu.html" type="text/ng-template">
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
-          <ion-nav-bar class="bar-positive">
+          <ion-nav-bar class="bar-positive bars-subheader">
             <ion-nav-back-button>返回</ion-nav-back-button> <!--顶部导航 左部 back按钮-->
             <ion-nav-buttons side="right">
               <!--顶部导航 右部 菜单按钮-->
@@ -56,10 +56,10 @@
           </ion-header-bar>
           <ion-content>
             <ul class="list">
-              <li class="item"><i class="icon ion-android-radio-button-on"></i> 高端招聘</li>
-              <li class="item"><i class="icon ion-android-radio-button-on"></i> 猎头介绍</li>
-              <li class="item"><i class="icon ion-android-radio-button-on"></i> 沙龙活动</li>
-              <li class="item"><i class="icon ion-android-radio-button-on"></i> 关于腾驹达</li>
+              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 高端招聘</a>
+              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</li>
+              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 沙龙活动</li>
+              <li class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 关于腾驹达</li>
             </ul>
           </ion-content>
           </ion-side-menu>
