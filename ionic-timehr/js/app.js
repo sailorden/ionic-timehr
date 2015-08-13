@@ -1,4 +1,4 @@
-angular.module('kuwuya', ['ionic'])
+angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
 .config(function($ionicConfigProvider) {
   $ionicConfigProvider.platform.ios.tabs.style('standard'); 
   $ionicConfigProvider.platform.ios.tabs.position('bottom');
