@@ -15,11 +15,11 @@
     <link rel=apple-touch-icon href=lib/img/icon/ios/icon-57.png>
     <link rel=apple-touch-icon sizes=72x72 href=lib/img/icon/ios/icon-72.png>
     <link rel=apple-touch-icon sizes=114x114 href=lib/img/icon/ios/icon-114.png>
-    <title>腾驹达猎聘网</title>
+    <title></title>
 
-    <script src="./lib/js/ionic.bundle.min.js"></script>
+    <script src="//cdn.bootcss.com/ionic/1.0.1/js/ionic.bundle.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" href="./lib/css/ionic.min.css">
+    <link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/ionic/1.0.1/css/ionic.min.css">
     <link href="./css/style.css" rel="stylesheet">
   </head>
   <body ng-controller="MainCtrl"  ng-class="{'bar-subheader-slide-away': slideHeader}">
@@ -40,7 +40,7 @@
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
           <ion-nav-bar class="bar-positive bars-subheader">
-            <ion-nav-back-button>返回</ion-nav-back-button> <!--顶部导航 左部 back按钮-->
+            <ion-nav-back-button></ion-nav-back-button> <!--顶部导航 左部 back按钮-->
             <ion-nav-buttons side="right">
               <!--顶部导航 右部 菜单按钮-->
               <button class="button button-icon ion-navicon" menu-toggle="right"></button>
@@ -52,12 +52,13 @@
         <ion-side-menu side="right">
           <ion-header-bar class="bar-positive">
             <h1 class="title"><i class="icon ion-social-html5"></i> 快速导航</h1>
-            <a href="#/jobs/home" class="button icon ion-home pull-right" menu-close></a>
+            <!--<a href="#/jobs/home" class="button icon ion-home pull-right" menu-close></a>-->
           </ion-header-bar>
           <ion-content>
             <ul class="list">
-              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 高端招聘</a>
-              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</a>
+              <a href="#/jobs/home" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 高端招聘</a>
+              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 测试</a>
+              <a href="#/jobs/lietou" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</a>
             </ul>
           </ion-content>
           </ion-side-menu>
@@ -65,89 +66,31 @@
     </script>
 
     <script id="templates/home.html" type="text/ng-template">
-      <ion-view view-title="腾驹达猎聘网">
-        <ion-content>
-          <div class="row">
-            <div class="col">
-                <ion-slide-box does-continue="true">
-                  <ion-slide>
-                    <div>
-                      <h3>f sdftist or tag</h3>
-                      <ion-spinner icon="spiral"></ion-spinner>
-                    </div>
-                    <div>
-                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
-                    </div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div>
-                      <h3>Favorite or skip short song samples Songhop suggests</h3>
-                    </div>
-                    <div>
-                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
-                    </div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div>
-                      <h3>Play your new music and share it with your friends</h3>
-                    </div>
-                    <div>
-                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
-                    </div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div>
-                      <h3>Play your new music and share it with your friends</h3>
-                    </div>
-                    <div>
-                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
-                    </div>
-                  </ion-slide>
-                  <ion-slide>
-                    <div>
-                      <h3>Play your new music and share it with your friends</h3>
-                    </div>
-                    <div>
-                      <h3>Tell us what kind of music you want to find by artist or tag</h3>
-                    </div>
-                  </ion-slide>
-                </ion-slide-box>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-50">
-              <a href="#/jobs/job" nav-direction="forward">
-                <button class="button button-large button-full button-royal">
-                  高端招聘
-                </button>
-              </a>
-            </div>
-            <div class="col col-50">
-              <a href="#/jobs/lietou">
-                <button class="button button-large button-full button-assertive">
-                  猎头介绍
-                </button>
-              </a>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col col-50">
-              <a href="#/event/about">
-                <button class="button button-large button-full button-balanced idpro-button-full">
-                  沙龙活动
-                </button>
-              </a>
-            </div>
-            <div class="col col-50">
-              <a href="#/event/moeny">
-                <button class="button button-large button-full button-positive idpro-button-full">
-                  关于腾驹达
-                </button>
-              </a>
-            </div>
-          </div>
-        </ion-content>
-      </ion-view>
+         <ion-view view-title="高端招聘" on-swipe-right="warn_right()" hide-nav-bar ="false">
+          <ion-pane ng-controller="JobCtrl">
+              <ion-content scroll-watch class="bars-header">
+                <div class="list">
+                  <ion-item>
+                    <label class="item item-input" style="padding:1px 0 0 16px;">
+                      <i class="icon ion-search placeholder-icon"></i>
+                      <input type="text" ng-model="input.filterUser" placeholder="职位名称">
+                    </label>
+                  </ion-item>
+                  <a href="#/jobs/joblist" class="item" >
+                    <h2>软件工程师<span class="job_meony">75~90万</span></h2>
+                    <p>北京百度有限公司 | 北京 | 5年以上 </p>
+                  </a>
+                  <a href="#/jobs/joblist" class="item" >
+                    <h2>软件工程师<span class="job_meony">75~90万</span></h2>
+                    <p>北京百度有限公司 | 北京 | 5年以上 </p>
+                  </a>
+                  <div class="item item-divider">
+                    {{datas}}
+                  </div>
+                </div>
+              </ion-content>
+            </ion-pane>
+        </ion-view>
     </script>
 
 <!-- your app's js -->

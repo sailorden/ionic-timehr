@@ -84,16 +84,17 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
     };
   $scope.nav_header = '腾驹达官网';
 
-  $rootScope.slideHeader = false;
-  $rootScope.slideHeaderPrevious = 0;
+  //$rootScope.slideHeader = false;
+  //$rootScope.slideHeaderPrevious = 0;
 })
-
+/*
 .directive('scrollWatch', function($rootScope) {
   return function(scope, elem, attr) {
     var start = 0;
     var threshold = 150;
     
     elem.bind('scroll', function(e) {
+
       if(e.detail.scrollTop - start > threshold) {
         $rootScope.slideHeader = true;
       } else {
@@ -109,4 +110,5 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
     });
   };
 });
+*/
 
