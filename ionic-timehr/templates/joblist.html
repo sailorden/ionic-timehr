@@ -1,4 +1,4 @@
- <ion-view view-title="啊范德萨发大水" hide-nav-bar ="false">
+ <ion-view view-title="啊范德萨发大水" on-swipe-right="warn_right()" hide-nav-bar ="false">
   
   <ion-pane>
       <ion-content scroll-watch class="bars-header">
@@ -11,9 +11,9 @@
       -->
         <div class="list">
           <div class="item item-divider">
-            Header
+            {{jobShow.name}}
           </div>
-          <a class="item" href="#">
+          <div class="item">
             <ul class="list list-borderless">
               <li class="item">
                 aaaaaaaa
@@ -28,7 +28,7 @@
                 aaaaaaaa
               </li>
             </ul>
-          </a>
+          </div>
           <a class="item" href="#">
             List Item
           </a>

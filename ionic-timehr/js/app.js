@@ -56,10 +56,11 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
       }
     })
     .state('jobmenu.joblist',{
-      url:"/joblist",
+      url:"/joblist/:id",
       views: {
         'menuJob' :{
-          templateUrl: "./templates/joblist.html"
+          templateUrl: "./templates/joblist.html",
+          controller:"joblistCtrl"
         }
       }
     })
@@ -84,14 +85,14 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
     };
   $scope.nav_header = '腾驹达官网';
 
-  //$rootScope.slideHeader = false;
-  //$rootScope.slideHeaderPrevious = 0;
+ // $rootScope.slideHeader = false;
+ // $rootScope.slideHeaderPrevious = 0;
 })
 /*
 .directive('scrollWatch', function($rootScope) {
   return function(scope, elem, attr) {
     var start = 0;
-    var threshold = 150;
+    var threshold = 300;
     
     elem.bind('scroll', function(e) {
 
@@ -100,15 +101,17 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
       } else {
         $rootScope.slideHeader = false;
       }
-      
+
       if ($rootScope.slideHeaderPrevious >= e.detail.scrollTop - start) {
         $rootScope.slideHeader = false;
       }
       
       $rootScope.slideHeaderPrevious = e.detail.scrollTop - start;
+      
       $rootScope.$apply();
     });
   };
 });
 */
+
 

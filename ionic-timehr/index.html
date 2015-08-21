@@ -15,7 +15,7 @@
     <link rel=apple-touch-icon href=lib/img/icon/ios/icon-57.png>
     <link rel=apple-touch-icon sizes=72x72 href=lib/img/icon/ios/icon-72.png>
     <link rel=apple-touch-icon sizes=114x114 href=lib/img/icon/ios/icon-114.png>
-    <title></title>
+    <title>腾驹达招聘</title>
 
     <script src="//cdn.bootcss.com/ionic/1.0.1/js/ionic.bundle.min.js"></script>
 
@@ -40,7 +40,7 @@
       <ion-side-menus enable-menu-with-back-views="false">
         <ion-side-menu-content>
           <ion-nav-bar class="bar-positive bars-subheader">
-            <ion-nav-back-button></ion-nav-back-button> <!--顶部导航 左部 back按钮-->
+            <ion-nav-back-button>返回</ion-nav-back-button> <!--顶部导航 左部 back按钮-->
             <ion-nav-buttons side="right">
               <!--顶部导航 右部 菜单按钮-->
               <button class="button button-icon ion-navicon" menu-toggle="right"></button>
@@ -66,27 +66,20 @@
     </script>
 
     <script id="templates/home.html" type="text/ng-template">
-         <ion-view view-title="高端招聘" on-swipe-right="warn_right()" hide-nav-bar ="false">
+         <ion-view view-title="职位搜索" on-swipe-right="warn_right()" hide-nav-bar ="false">
           <ion-pane ng-controller="JobCtrl">
               <ion-content scroll-watch class="bars-header">
                 <div class="list">
                   <ion-item>
                     <label class="item item-input" style="padding:1px 0 0 16px;">
                       <i class="icon ion-search placeholder-icon"></i>
-                      <input type="text" ng-model="input.filterUser" placeholder="职位名称">
+                      <input type="text" ng-model="datas.name" placeholder="职位名称">
                     </label>
                   </ion-item>
-                  <a href="#/jobs/joblist" class="item" >
-                    <h2>软件工程师<span class="job_meony">75~90万</span></h2>
+                  <a href="#/jobs/joblist/{{key.id}}" class="item" collection-repeat="key in datas | filter:datas.name:datas.id | orderBy:dateNow">
+                    <h2>{{key.name}}<span class="job_meony">75~90万</span></h2>
                     <p>北京百度有限公司 | 北京 | 5年以上 </p>
                   </a>
-                  <a href="#/jobs/joblist" class="item" >
-                    <h2>软件工程师<span class="job_meony">75~90万</span></h2>
-                    <p>北京百度有限公司 | 北京 | 5年以上 </p>
-                  </a>
-                  <div class="item item-divider">
-                    {{datas}}
-                  </div>
                 </div>
               </ion-content>
             </ion-pane>
@@ -96,9 +89,6 @@
 <!-- your app's js -->
 <script src="./js/app.js"></script>
 <script src="./js/controllers/JobCtrl.js"></script>
-<!-- controllers 
-
-<script src="./lib/js/controllers/AuthCtrl.js"></script>
--->
+<script src="./js/server/homeServer.js"></script>
   </body>
 </html>
