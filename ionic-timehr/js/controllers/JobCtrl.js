@@ -1,5 +1,5 @@
 angular.module('kuwuya.JobCtrl', ['kuwuya.homeServer'])
-.controller('JobCtrl', function($scope,$timeout,$ionicLoading,jobService) {
+.controller('JobCtrl', function($scope,$timeout,$ionicLoading,$ionicPopup,jobService) {
 	$ionicLoading.show({
 			template: "正在载入数据，请稍后..."
 		});
@@ -7,14 +7,16 @@ angular.module('kuwuya.JobCtrl', ['kuwuya.homeServer'])
    		//console.log(config);
    		$scope.datas = data; //输出数组
    		$scope.dateNow = "id" //排序
-   		if($scope.datas !=''){
+   		if($scope.status ='200'){
    			$ionicLoading.hide();
    		}
    		
    }).error(function() {
-   		$timeout(function() {
-   			alert('网络出错啦~ 请重新刷新~');
-   		}, 5000);
+   		$ionicLoading.hide();
+   		$ionicPopup.alert({
+			title: "警告",
+			template: "网络连接状态不太好,请重新连接"
+		})
    	});
 
 })
