@@ -1,12 +1,22 @@
 angular.module('kuwuya.JobCtrl', ['kuwuya.homeServer'])
-.controller('JobCtrl', function($scope,$timeout,jobService) {
+.controller('JobCtrl', function($scope,$timeout,$ionicLoading,jobService) {
+	$ionicLoading.show({
+			template: "正在载入数据，请稍后..."
+		});
    jobService.joblist().success(function (data,status,config) {
    		//console.log(config);
    		$scope.datas = data; //输出数组
    		$scope.dateNow = "id" //排序
+   		if($scope.datas !=''){
+   			$ionicLoading.hide();
+   		}
+   		
    }).error(function() {
-   		alert('URL无效 错误');
-   	})
+   		$timeout(function() {
+   			alert('网络出错啦~ 请重新刷新~');
+   		}, 5000);
+   	});
+
 })
 .controller('joblistCtrl',function($scope,$location,$stateParams,jobService) {
   //console.log($location);
