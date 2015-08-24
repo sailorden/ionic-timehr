@@ -1,0 +1,23 @@
+ <ion-view view-title="高端招聘" on-swipe-right="warn_right()" hide-nav-bar ="false">
+  <ion-pane ng-controller="JobCtrl">
+      <ion-content scroll-watch class="bars-header">
+        <div class="list">
+          <ion-item>
+            <label class="item item-input" style="padding:1px 0 0 16px;">
+              <i class="icon ion-search placeholder-icon"></i>
+              <input type="text" ng-model="input.filterUser" placeholder="输入姓名">
+            </label>
+          </ion-item>
+          <a href="#/jobs/namecard_list" class="item" >
+            <h2>软件工程师<span class="job_meony">75~90万</span></h2>
+            <p>北京百度有限公司 | 北京 | 5年以上 </p>
+          </a>
+         
+        </div>
+      </ion-content>
+    </ion-pane>
+
+</ion-view>
+
+
+

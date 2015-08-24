@@ -47,19 +47,27 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
         }
       }
     })
-    .state('jobmenu.job', {
-      url: "/job",
+    .state('jobmenu.namecard', {
+      url: "/namecard",
       views: {
         'menuJob' :{
-          templateUrl: "./templates/job.html"
+          templateUrl: "./templates/namecard.html"
+        }
+      }
+    })
+    .state('jobmenu.namecard_list', {
+      url: "/namecard_list",
+      views: {
+        'menuJob' :{
+          templateUrl: "./templates/namecard_list.html"
         }
       }
     })
     .state('jobmenu.joblist',{
-      url:"/joblist/:id",
+      url:"/job_list/:id",
       views: {
         'menuJob' :{
-          templateUrl: "./templates/joblist.html",
+          templateUrl: "./templates/job_list.html",
           controller:"joblistCtrl"
         }
       }

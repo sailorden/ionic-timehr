@@ -57,8 +57,8 @@
           <ion-content>
             <ul class="list">
               <a href="#/jobs/home" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 高端招聘</a>
-              <a href="#/jobs/job" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 测试</a>
-              <a href="#/jobs/lietou" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头介绍</a>
+              <a href="#/jobs/namecard" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 猎头名片</a>
+              <a href="#/jobs/lietou" class="item" menu-close><i class="icon ion-android-radio-button-on"></i> 公司介绍</a>
             </ul>
           </ion-content>
           </ion-side-menu>
@@ -76,7 +76,7 @@
                       <input type="text" ng-model="datas.name" placeholder="职位名称">
                     </label>
                   </ion-item>
-                  <a href="#/jobs/joblist/{{key.id}}" class="item" collection-repeat="key in datas | filter:datas.name:datas.id | orderBy:dateNow">
+                  <a href="#/jobs/job_list/{{key.id}}" class="item" collection-repeat="key in datas | filter:datas.name:datas.id | orderBy:dateNow">
                     <h2>{{key.name}}<span class="job_meony">75~90万</span></h2>
                     <p>北京百度有限公司 | 北京 | 5年以上 </p>
                   </a>
