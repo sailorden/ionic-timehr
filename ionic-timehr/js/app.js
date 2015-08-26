@@ -1,4 +1,4 @@
-angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
+angular.module('kuwuya', ['ionic','kuwuya.JobCtrl','kuwuya.namecardServer'])
 .config(function($ionicConfigProvider) {
   $ionicConfigProvider.platform.ios.tabs.style('standard'); 
   $ionicConfigProvider.platform.ios.tabs.position('bottom');
@@ -51,7 +51,8 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
       url: "/namecard",
       views: {
         'menuJob' :{
-          templateUrl: "./templates/namecard.html"
+          templateUrl: "./templates/namecard.html",
+          //controller:"namecardCtrl_timeout"  //自动显示导航
         }
       }
     })
@@ -63,7 +64,7 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
         }
       }
     })
-    .state('jobmenu.joblist',{
+    .state('jobmenu.job_list',{
       url:"/job_list/:id",
       views: {
         'menuJob' :{
@@ -72,7 +73,7 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
         }
       }
     })
-    .state('jobmenu.lietou', {
+    .state('jobmenu.lietou', {  //待开发
       url: "/lietou",
       views: {
         'menuJob' :{
@@ -85,18 +86,23 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
   
  $urlRouterProvider.otherwise("/jobs/home");
 })
-
-.controller('MainCtrl', function($scope, $ionicHistory, $ionicScrollDelegate, $rootScope) {
+.controller('MainCtrl', function($scope,$timeout, $ionicHistory, $ionicScrollDelegate, $rootScope) {
   $scope.warn_right = function () {
         //history.back();
         $ionicHistory.goBack();
+        $timeout(function () {
+          $rootScope.slideHeader = false;
+        },500);
     };
-  $scope.nav_header = '腾驹达官网';
+  $scope.nav_header = function () {
+    $timeout(function () {
+      $rootScope.slideHeader = false;
+    },500);
+  }
 
- // $rootScope.slideHeader = false;
- // $rootScope.slideHeaderPrevious = 0;
+  $rootScope.slideHeader = false;
+  $rootScope.slideHeaderPrevious = 0;
 })
-/*
 .directive('scrollWatch', function($rootScope) {
   return function(scope, elem, attr) {
     var start = 0;
@@ -109,17 +115,17 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl'])
       } else {
         $rootScope.slideHeader = false;
       }
-
+      /*
       if ($rootScope.slideHeaderPrevious >= e.detail.scrollTop - start) {
         $rootScope.slideHeader = false;
       }
       
       $rootScope.slideHeaderPrevious = e.detail.scrollTop - start;
-      
+      */
       $rootScope.$apply();
     });
   };
 });
-*/
+
 
 

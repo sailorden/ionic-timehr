@@ -5,8 +5,10 @@ a{text-decoration: none;}
 
 /*job html  高端招聘 职位搜索*/
 .job_meony{float: right;color:#ff7f00;}
+.ion-ios-arrow-right{color:#888;}
 
-
+/*namecard 猎头名片*/
+.item-avatar>img:first-child{border-radius:10%;top:7px;left:5px;max-width: 60px;max-height: 60px;}
 
 /*顶部自动隐藏*/
 .bars-subheader {
