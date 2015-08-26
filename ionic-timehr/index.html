@@ -76,9 +76,13 @@
                       <input type="text" ng-model="datas.name" placeholder="职位名称">
                     </label>
                   </ion-item>
-                  <a href="#/jobs/job_list/{{key.id}}" class="item item-icon-right" collection-repeat="key in datas | filter:datas.name:datas.id | orderBy:dateNow">
-                    <h2>{{key.name}}<span class="job_meony">75~90万</span></h2>
+                  <a href="#/jobs/job_list/{{key.id}}" class="item item-icon-right" ng-class="$odd ? 'odd':''" collection-repeat="key in datas | filter:datas.name:datas.id | orderBy:dateNow">
+                    <h2>{{key.name}}<span class="job_meony">75~90万{{$index+1}}</span></h2>
                     <p>北京百度有限公司 | 北京 | 5年以上 </p>
+                    <!--
+                    <span ng-bind="datas.length"></span>
+                    <p ng-repeat="mo in key">{{mo}}</p>
+                    -->
                     <i class="icon ion-ios-arrow-right"></i>
                   </a>
                 </div>

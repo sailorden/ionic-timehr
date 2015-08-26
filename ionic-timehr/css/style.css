@@ -2,7 +2,7 @@ a{text-decoration: none;}
 /*ionic 主页 home.html*/
 .slider-slides{height: 230px;}
 .button.button-block, .button.button-full{margin: 0px;}
-
+.odd{background-color: #eee;}
 /*job html  高端招聘 职位搜索*/
 .job_meony{float: right;color:#ff7f00;}
 .ion-ios-arrow-right{color:#888;}
