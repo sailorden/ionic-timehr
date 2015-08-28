@@ -73,6 +73,14 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl','kuwuya.namecardServer'])
         }
       }
     })
+    .state('jobmenu.login',{
+      url:"/login",
+      views: {
+        'menuJob' :{
+          templateUrl: "./templates/login.html"
+        }
+      }
+    })
     .state('jobmenu.lietou', {  //待开发
       url: "/lietou",
       views: {
@@ -89,7 +97,7 @@ angular.module('kuwuya', ['ionic','kuwuya.JobCtrl','kuwuya.namecardServer'])
 .controller('MainCtrl', function($scope,$timeout, $ionicHistory, $ionicScrollDelegate, $rootScope) {
   $scope.warn_right = function () {
         //history.back();
-        $ionicHistory.goBack();
+        $ionicHistory.goBack()
         $timeout(function () {
           $rootScope.slideHeader = false;
         },500);

@@ -19,7 +19,7 @@ angular.module('kuwuya.homeServer', [])
 					title: "警告",
 					template: "网络连接状态不太好,请重新连接"
 				})
-		   	});
+		   	})
 		   	$ionicLoading.hide(); //消失载入loading示意图
 		},
 		job_idFactory:function(id) {
